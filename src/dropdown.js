@@ -2,10 +2,6 @@ import React from 'react'
 import './DropDown.css'        
        
 class DropDown extends React.Component{
-    
-    
-   
-      
     render(){
         return(
             <div>

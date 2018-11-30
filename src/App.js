@@ -35,9 +35,13 @@ const people = [
     experience: 5 
   }
 ]
-function searchingFor(term){
+function searchingFor(term,selectedOption){
   return function(x){
-    return x.title.toLowerCase().includes(term.toLowerCase())|| !term;
+   if(x.location.toLowerCase() === selectedOption.toLowerCase()){
+    return (x.title.toLowerCase().includes(term.toLowerCase() ));
+  }else{
+    return !term;
+  }
   }
 }
 class App extends React.Component{
@@ -59,13 +63,12 @@ class App extends React.Component{
   searchHandler(){
     this.setState({term: document.getElementById("keyword").value})
   }
-  change(event){
-    console.log("value", this.state.selectedOption)    
+  change(event){   
     this.setState({selectedOption: event.target.value})
-    
+ 
   }
   render(){  
-    const {people,term} = this.state;
+    const {people,term,selectedOption} = this.state;
     return(
       <div className = "container">
       <div className = "searchComponent">
@@ -77,10 +80,10 @@ class App extends React.Component{
         <button className = "search" onClick={this.searchHandler}>Search</button>
         
         </div>
-    
+      
         <div>
           {
-            people.filter(searchingFor(term)).map(jobSeekers =>
+            people.filter(searchingFor(term,selectedOption)).map(jobSeekers =>
                 <div key =  {jobSeekers.id}>
                   <p> {jobSeekers.id}</p>
                   <p> {jobSeekers.title}</p>
