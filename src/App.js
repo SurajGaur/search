@@ -1,12 +1,7 @@
 import React from 'react'
 import DropDown from './DropDown';
-
-//import JobSeekers from './JobSeekers'
 import './App.css'
-// import HeaderBody from './HeaderBody';
-// import Employer from './Employer'
-//import JobSeekers from './JobSeekers';
-// import {HashRouter, Route, Switch} from "react-router-dom"
+
 
 const people = [
   {
@@ -82,7 +77,7 @@ class App extends React.Component{
         <button className = "search" onClick={this.searchHandler}>Search</button>
         
         </div>
-        
+    
         <div>
           {
             people.filter(searchingFor(term)).map(jobSeekers =>
@@ -95,9 +90,6 @@ class App extends React.Component{
           }
         </div>
       </div>
-     
-     
-      
     )
   }
 }
