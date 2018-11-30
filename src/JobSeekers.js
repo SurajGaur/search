@@ -5,7 +5,7 @@ const JobSeekers = (props) => {
 
         return(
             <div>
-                <p></p>
+                <p> </p>
             </div>
         )
     }

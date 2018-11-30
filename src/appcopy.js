@@ -52,34 +52,26 @@ class App extends React.Component{
   constructor(props){
     super(props)
       this.state = {
-        people: people,
+        people:people,
         term: '',
-        value: '',
-        selectedOption: ''
+        value: ''
       }
       this.searchHandler = this.searchHandler.bind(this);
-      this.change = this.change.bind(this);
   }
- 
-  searchHandler(){
-    this.setState({term: document.getElementById("keyword").value})
+  searchHandler(event){
+    this.setState({term: event.target.value})
   }
-  change(event){
-    console.log("value", this.state.selectedOption)    
-    this.setState({selectedOption: event.target.value})
-    
-  }
+  
   render(){  
     const {people,term} = this.state;
     return(
       <div className = "container">
       <div className = "searchComponent">
-        <input className = "input" id="keyword" placeholder = "Keywords" />
+        <input className = "input" placeholder = "Keywords" onChange = {this.searchHandler}/>
         <div className = "dropdown">
-        <DropDown action = {this.change}/>
-       
+        <DropDown />
         </div>
-        <button className = "search" onClick={this.searchHandler}>Search</button>
+        <button className = "search">Search</button>
         
         </div>
         

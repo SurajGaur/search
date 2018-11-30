@@ -30,3 +30,26 @@
     transform: rotate(360deg);
   }
 }
+.searchComponent{
+  display: inline-flex;
+  background-color: lightgrey;
+}
+.input{
+  margin: 20px;
+  background-color: lightblue;
+  border-radius: 10px;
+  text-align: left;
+  height: 25px;
+}
+
+.search{
+  margin: 20px;
+  padding: 5px 15px 5px 15px;
+  background-color: #1fc2e4;
+  border-radius: 10px;
+  
+  
+  
+  
+}
+
